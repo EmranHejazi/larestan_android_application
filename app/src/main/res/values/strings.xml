@@ -2,4 +2,9 @@
     <string name="app_name">Lar</string>
     <string name="splash_title">لار, شهری به رنگ خاک</string>
     <string name="search">جستجو در</string>
+    <string name="suggestions">پیشنهاد ها</string>
+    <string name="content_description_menu">Menu</string>
+    <string name="content_description_search">Search</string>
+    <string name="content_description_lar">Lar</string>
+    <string name="lorem_title">lorem_title</string>
 </resources>
