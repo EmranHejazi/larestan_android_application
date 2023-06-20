@@ -419,7 +419,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/iranyekan"
-                        android:text="@string/category_5_proverbs"
+                        android:text="@string/category_6_foods"
                         android:textColor="@color/primary"
                         android:textFontWeight="1000"
                         android:textSize="20sp"
