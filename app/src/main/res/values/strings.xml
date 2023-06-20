@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Lar</string>
     <string name="splash_title">لار, شهری به رنگ خاک</string>
+    <string name="search">جستجو در</string>
 </resources>

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -11,9 +12,12 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        setFullscreen();
+        setDelay();
+    }
 
+    private void setDelay() {
         final int splashTimeOut = 3000;
-
         Thread splashThread = new Thread(){
             int wait = 0;
             @Override
@@ -24,7 +28,7 @@ public class SplashActivity extends AppCompatActivity {
                         sleep(100);
                         wait += 100;
                     }
-                } catch (Exception e) {
+                } catch (Exception ignored) {
                 }finally{
                     startActivity(new Intent(getApplicationContext(),MainActivity.class));
                     finish();
@@ -32,7 +36,11 @@ public class SplashActivity extends AppCompatActivity {
             }
         };
         splashThread.start();
+    }
 
-
+    private void setFullscreen() {
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
+                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
     }
 }

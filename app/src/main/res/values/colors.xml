@@ -10,4 +10,6 @@
 
     <color name="primary">#c8b27d</color>
     <color name="background">#d7d7d7</color>
+    <color name="content">#E3E3E3</color>
+    <color name="on_content">#8D8D8D</color>
 </resources>
