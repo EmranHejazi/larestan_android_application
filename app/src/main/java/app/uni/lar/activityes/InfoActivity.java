@@ -1,10 +1,12 @@
-package app.uni.lar;
+package app.uni.lar.activityes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
+
+import app.uni.lar.R;
 
 public class InfoActivity extends AppCompatActivity {
 

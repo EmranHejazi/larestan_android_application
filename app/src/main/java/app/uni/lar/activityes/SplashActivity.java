@@ -1,10 +1,12 @@
-package app.uni.lar;
+package app.uni.lar.activityes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import app.uni.lar.R;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -17,7 +19,7 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void setDelay() {
-        final int splashTimeOut = 3000;
+        final int splashTimeOut = 1500;
         Thread splashThread = new Thread(){
             int wait = 0;
             @Override

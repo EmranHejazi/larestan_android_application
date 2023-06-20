@@ -14,4 +14,10 @@
     <string name="title_splash">لار, شهری به رنگ خاک</string>
     <string name="title_info">درباره ما</string>
     <string name="content_description_pattern">Pattern</string>
+    <string name="category_1_natural_geography">جغرافیا طبیعی</string>
+    <string name="category_2_local_games">بازی های محلی</string>
+    <string name="category_3_ancient_places">اماکن باستانی</string>
+    <string name="category_4_economic_view">دید اقتصادی</string>
+    <string name="category_5_proverbs">ضرب المثل ها</string>
+    <string name="category_6_foods">غذا های بومی</string>
 </resources>

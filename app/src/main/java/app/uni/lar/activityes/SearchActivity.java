@@ -1,9 +1,11 @@
-package app.uni.lar;
+package app.uni.lar.activityes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+
+import app.uni.lar.R;
 
 public class SearchActivity extends AppCompatActivity {
 
