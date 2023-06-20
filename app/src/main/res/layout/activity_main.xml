@@ -123,7 +123,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/lorem_image" />
+                        android:src="@drawable/lorem_image"
+                        tools:layout_editor_absoluteX="۱۳۷dp"
+                        tools:layout_editor_absoluteY="۰dp" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
