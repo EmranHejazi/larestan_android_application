@@ -7,6 +7,12 @@
     tools:context=".SplashActivity"
     android:background="@color/background">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_splash_pattern" />
+
     <com.google.android.material.card.MaterialCardView
         android:layout_width="300dp"
         android:layout_height="300dp"
