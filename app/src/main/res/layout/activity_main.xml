@@ -76,13 +76,14 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ImageView
+            android:id="@+id/button_menu"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_gravity="center"
             android:background="@android:color/transparent"
             android:contentDescription="@string/content_description_menu"
             android:padding="6dp"
-            android:src="@drawable/round_menu_24" />
+            android:src="@drawable/round_more_vert_24" />
 
     </LinearLayout>
     <!--  Title  -->
@@ -93,6 +94,8 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
         android:text="@string/suggestions"
+        android:fontFamily="@font/iranyekan"
+        android:textFontWeight="1000"
         android:textColor="@color/text"
         android:textSize="30sp"
         android:textStyle="bold"

@@ -6,5 +6,8 @@
     <string name="content_description_menu">Menu</string>
     <string name="content_description_search">Search</string>
     <string name="content_description_lar">Lar</string>
-    <string name="lorem_title">lorem_title</string>
+    <string name="lorem_title">چلوس باقالی</string>
+    <string name="menu_item_more_information">اطلاعات بیشتر</string>
+    <string name="menu_item_share">به اشتراک گذاری</string>
+    <string name="menu_item_exit">خروج</string>
 </resources>
