@@ -25,7 +25,8 @@
             android:background="@drawable/shape_search"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="InefficientWeight">
 
             <ImageView
                 android:layout_width="40dp"
@@ -33,7 +34,7 @@
                 android:layout_marginStart="8dp"
                 android:contentDescription="@string/content_description_search"
                 android:padding="6dp"
-                android:src="@drawable/round_search_24"
+                android:src="@drawable/ic_search"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -83,7 +84,7 @@
             android:background="@android:color/transparent"
             android:contentDescription="@string/content_description_menu"
             android:padding="6dp"
-            android:src="@drawable/round_more_vert_24" />
+            android:src="@drawable/ic_menu" />
 
     </LinearLayout>
     <!--  Title  -->
@@ -100,7 +101,8 @@
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/search_container" />
+        app:layout_constraintTop_toBottomOf="@id/search_container"
+        tools:targetApi="p" />
     <!--  Suggestions  -->
     <HorizontalScrollView
         android:layout_width="match_parent"
@@ -109,7 +111,7 @@
         app:layout_constraintTop_toBottomOf="@id/title_suggestions">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent">
             <!--  Item 1  -->
             <com.google.android.material.card.MaterialCardView
@@ -126,9 +128,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/lorem_image"
+                        android:src="@drawable/image_lorem"
                         tools:layout_editor_absoluteX="۱۳۷dp"
-                        tools:layout_editor_absoluteY="۰dp" />
+                        tools:layout_editor_absoluteY="۰dp"
+                        android:contentDescription="@string/content_description_suggestions" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -151,131 +154,6 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </com.google.android.material.card.MaterialCardView>
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="300dp"
-                android:layout_height="400dp"
-                android:layout_margin="20dp"
-                app:cardCornerRadius="30dp">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/lorem_image" />
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:background="@color/primary_transparent"
-                        app:layout_constraintBottom_toBottomOf="parent">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/lorem_title"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintLeft_toLeftOf="parent"
-                            app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            android:textColor="@color/white"
-                            android:textSize="20sp"/>
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="300dp"
-                android:layout_height="400dp"
-                android:layout_margin="20dp"
-                app:cardCornerRadius="30dp">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/lorem_image" />
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:background="@color/primary_transparent"
-                        app:layout_constraintBottom_toBottomOf="parent">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/lorem_title"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintLeft_toLeftOf="parent"
-                            app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            android:textColor="@color/white"
-                            android:textSize="20sp"/>
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="300dp"
-                android:layout_height="400dp"
-                android:layout_margin="20dp"
-                app:cardCornerRadius="30dp">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/lorem_image" />
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:background="@color/primary_transparent"
-                        app:layout_constraintBottom_toBottomOf="parent">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/lorem_title"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintLeft_toLeftOf="parent"
-                            app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            android:textColor="@color/white"
-                            android:textSize="20sp"/>
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </LinearLayout>
     </HorizontalScrollView>
 

@@ -1,6 +1,5 @@
 package app.uni.lar;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -31,7 +30,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initialize() {
-        buttonMenu.setOnClickListener(v -> eventMenuClick());
+        buttonMenu.setOnClickListener(v -> eventMenuClick()); // popup the menu
+        searchContainer.setOnClickListener(v -> eventSearchClick());
+    }
+
+    private void eventSearchClick() {
+        startActivity(new Intent(MainActivity.this, SearchActivity.class));
     }
 
     private void eventMenuClick() {
@@ -43,18 +47,17 @@ public class MainActivity extends AppCompatActivity {
 
     // menu items click events
     public void eventMenuItemClickMoreInformation(MenuItem item) {
-        //TODO("open information activity")
-    }
-
-    public void eventMenuItemClickExit(MenuItem item) {
+        startActivity(new Intent(MainActivity.this, InfoActivity.class));
         finish();
     }
 
-    public void eventMenuItemClickShare(MenuItem item) {
-        // Get the link to share
-        String link = "https://www.google.com";
+    public void eventMenuItemClickExit(MenuItem item) {
+        finish(); // finish activity
+    }
 
-        // Create an intent to share the link
+    public void eventMenuItemClickShare(MenuItem item) {
+        // open android share intent
+        String link = "http://dushusir.com/fake/win10ue/win10ue.html";
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.setType("text/plain");
         shareIntent.putExtra(Intent.EXTRA_TEXT, link);

@@ -4,10 +4,14 @@
     <string name="search">جستجو در</string>
     <string name="suggestions">پیشنهاد ها</string>
     <string name="content_description_menu">Menu</string>
+    <string name="content_description_suggestions">suggestion</string>
     <string name="content_description_search">Search</string>
     <string name="content_description_lar">Lar</string>
     <string name="lorem_title">چلوس باقالی</string>
-    <string name="menu_item_more_information">اطلاعات بیشتر</string>
+    <string name="menu_item_more_information">درباره ما</string>
     <string name="menu_item_share">به اشتراک گذاری</string>
     <string name="menu_item_exit">خروج</string>
+    <string name="title_splash">لار, شهری به رنگ خاک</string>
+    <string name="title_info">درباره ما</string>
+    <string name="content_description_pattern">Pattern</string>
 </resources>
