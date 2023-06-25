@@ -1,6 +1,8 @@
 package app.uni.lar.activityes;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +13,8 @@ import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 
 import app.uni.lar.R;
+import app.uni.lar.adapters.SuggestionsAdapter;
+import app.uni.lar.data.SuggestionsData;
 import app.uni.lar.utils.ExitDialog;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,80 +22,34 @@ public class MainActivity extends AppCompatActivity {
     private ImageView buttonMenu;
     private LinearLayout searchContainer;
     private PopupMenu popupMenu;
-    private LinearLayout category1NaturalGeography;
-    private LinearLayout category2LocalGames;
-    private LinearLayout category3AncientPlaces;
-    private LinearLayout category4EconomicView;
-    private LinearLayout category5Proverbs;
-    private LinearLayout category6Foods;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        findViews();
         initialize();
     }
 
     private void findViews() {
         buttonMenu = findViewById(R.id.button_menu);
         searchContainer = findViewById(R.id.search_container);
-        category1NaturalGeography = findViewById(R.id.category_1_natural_geography);
-        category2LocalGames = findViewById(R.id.category_2_local_games);
-        category3AncientPlaces = findViewById(R.id.category_3_ancient_places);
-        category4EconomicView = findViewById(R.id.category_4_economic_view);
-        category5Proverbs = findViewById(R.id.category_5_proverbs);
-        category6Foods = findViewById(R.id.category_6_foods);
     }
 
     private void initialize() {
+        setSuggestionsAdapter();
+        findViews();
         buttonMenu.setOnClickListener(v -> eventMenuClick()); // popup the menu
         searchContainer.setOnClickListener(v -> eventSearchClick());
-        category1NaturalGeography.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, CategoryItemsActivity.class);
-            intent.putExtra("title", getString(R.string.category_1_natural_geography));
-            intent.putExtra("category", "1");
-            startActivity(intent);
-            finish();
-        });
-        category2LocalGames.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, CategoryItemsActivity.class);
-            intent.putExtra("title", getString(R.string.category_2_local_games));
-            intent.putExtra("category", "2");
-            startActivity(intent);
-            finish();
-        });
-        category3AncientPlaces.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, CategoryItemsActivity.class);
-            intent.putExtra("title", getString(R.string.category_3_ancient_places));
-            intent.putExtra("category", "3");
-            startActivity(intent);
-            finish();
-        });
-        category4EconomicView.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, CategoryItemsActivity.class);
-            intent.putExtra("title", getString(R.string.category_4_economic_view));
-            intent.putExtra("category", "4");
-            startActivity(intent);
-            finish();
-        });
-        category5Proverbs.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, CategoryItemsActivity.class);
-            intent.putExtra("title", getString(R.string.category_5_proverbs));
-            intent.putExtra("category", "5");
-            startActivity(intent);
-            finish();
-        });
-        category6Foods.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, CategoryItemsActivity.class);
-            intent.putExtra("title", getString(R.string.category_6_foods));
-            intent.putExtra("category", "6");
-            startActivity(intent);
-            finish();
-        });
-
-
     }
+
+    private void setSuggestionsAdapter() {
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.list_suggestions);
+        SuggestionsAdapter adapter = new SuggestionsAdapter(new SuggestionsData().getSuggestionsData());
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false));
+        recyclerView.setAdapter(adapter);
+    }
+
 
     private void eventSearchClick() {
         startActivity(new Intent(MainActivity.this, SearchActivity.class));
@@ -124,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(Intent.createChooser(shareIntent, "Share link"));
     }
 
+    // open the Exit dialog when BackPressed
     @Override
     public void onBackPressed() {
         ExitDialog.show(MainActivity.this);
