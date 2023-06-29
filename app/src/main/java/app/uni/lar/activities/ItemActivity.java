@@ -27,15 +27,17 @@ public class ItemActivity extends AppCompatActivity {
         findViews();
         // event for back button
         buttonBack.setOnClickListener(v -> {
-            startActivity(new Intent(this, CategoryItemsActivity.class));
             finish();
         });
+        // set the Status bar color
+        getWindow().setStatusBarColor(getColor(R.color.primary));
         // get data
         String itemName = getIntent().getStringExtra("item_name");
         String itemImageID = getIntent().getStringExtra("item_imageID");
         String itemContent = getIntent().getStringExtra("item_content");
+        String categoryTitle = getIntent().getStringExtra("category_title");
         // set title
-        textTitle.setText(itemName);
+        textTitle.setText(categoryTitle);
         titleItem.setText(itemName);
     }
 

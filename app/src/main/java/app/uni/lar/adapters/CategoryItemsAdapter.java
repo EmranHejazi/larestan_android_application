@@ -17,9 +17,11 @@ import app.uni.lar.models.Item;
 
 public class CategoryItemsAdapter extends RecyclerView.Adapter<CategoryItemsAdapter.ViewHolder> {
     private final Item[] items;
+    private final String categoryTitle;
 
-    public CategoryItemsAdapter(Item[] items) {
+    public CategoryItemsAdapter(Item[] items, String categoryTitle) {
         this.items = items;
+        this.categoryTitle = categoryTitle;
     }
 
     @NonNull
@@ -40,6 +42,7 @@ public class CategoryItemsAdapter extends RecyclerView.Adapter<CategoryItemsAdap
             intent.putExtra("item_name", items[position].getTitle());
             intent.putExtra("item_imageID", items[position].getImageID());
             intent.putExtra("item_content", items[position].getContent());
+            intent.putExtra("category_title", categoryTitle);
             view.getContext().startActivity(intent);
         });
     }
