@@ -52,7 +52,7 @@ public class SuggestionsAdapter extends RecyclerView.Adapter<SuggestionsAdapter.
             super(itemView);
             this.imageView = itemView.findViewById(R.id.image_suggestion);
             this.textView = itemView.findViewById(R.id.title_suggestion);
-            relativeLayout = itemView.findViewById(R.id.relative_layout);
+            relativeLayout = itemView.findViewById(R.id.relative_layout_suggestions);
         }
     }
 }

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/relative_layout_suggestions"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="20dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relative_layout_item">
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="280dp"
-        android:layout_height="446dp"
+        android:layout_margin="10dp"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
         app:cardBackgroundColor="@color/primary"
         app:cardCornerRadius="30dp">
 
         <ImageView
-            android:id="@+id/image_suggestion"
+            android:id="@+id/image_item"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
@@ -26,7 +26,7 @@
             android:background="@drawable/shape_suggestions_description">
 
             <TextView
-                android:id="@+id/title_suggestion"
+                android:id="@+id/title_item"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/iranyekan"
@@ -41,5 +41,6 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
+
 
 </RelativeLayout>

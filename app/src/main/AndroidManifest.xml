@@ -13,16 +13,19 @@
         android:theme="@style/Theme.Lar"
         tools:targetApi="31">
         <activity
-            android:name=".activityes.CategoryItemsActivity"
+            android:name=".activities.ItemActivity"
             android:exported="false" />
         <activity
-            android:name=".activityes.SearchActivity"
+            android:name=".activities.CategoryItemsActivity"
             android:exported="false" />
         <activity
-            android:name=".activityes.InfoActivity"
+            android:name=".activities.SearchActivity"
             android:exported="false" />
         <activity
-            android:name=".activityes.SplashActivity"
+            android:name=".activities.InfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,7 +38,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activityes.MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

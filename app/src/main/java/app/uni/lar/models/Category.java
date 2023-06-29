@@ -1,10 +1,10 @@
 package app.uni.lar.models;
 
-public class Suggestion {
+public class Category {
     private String title;
     private int imageID;
 
-    public Suggestion(String title, int imageID) {
+    public Category(String title, int imageID) {
         this.title = title;
         this.imageID = imageID;
     }

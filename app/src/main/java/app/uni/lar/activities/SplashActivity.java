@@ -1,4 +1,4 @@
-package app.uni.lar.activityes;
+package app.uni.lar.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,21 +18,23 @@ public class SplashActivity extends AppCompatActivity {
         setDelay();
     }
 
+    // make fake delay for show logo
     private void setDelay() {
         final int splashTimeOut = 1500;
-        Thread splashThread = new Thread(){
+        Thread splashThread = new Thread() {
             int wait = 0;
+
             @Override
             public void run() {
                 try {
                     super.run();
-                    while(wait < splashTimeOut){
+                    while (wait < splashTimeOut) {
                         sleep(100);
                         wait += 100;
                     }
                 } catch (Exception ignored) {
-                }finally{
-                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                } finally {
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
                     finish();
                 }
             }
@@ -40,6 +42,7 @@ public class SplashActivity extends AppCompatActivity {
         splashThread.start();
     }
 
+    // hide the Status Bar
     private void setFullscreen() {
         View decorView = getWindow().getDecorView();
         decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE |

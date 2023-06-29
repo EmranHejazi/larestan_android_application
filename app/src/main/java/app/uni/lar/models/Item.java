@@ -1,12 +1,14 @@
 package app.uni.lar.models;
 
-public class Suggestion {
+public class Item {
     private String title;
     private int imageID;
+    private String content;
 
-    public Suggestion(String title, int imageID) {
+    public Item(String title, int imageID, String content) {
         this.title = title;
         this.imageID = imageID;
+        this.content = content;
     }
 
     public String getTitle() {
@@ -23,5 +25,13 @@ public class Suggestion {
 
     public void setImageID(int imageID) {
         this.imageID = imageID;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 }

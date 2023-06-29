@@ -1,4 +1,4 @@
-package app.uni.lar.activityes;
+package app.uni.lar.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +15,8 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
         setFullscreen();
     }
+
+    // hide the Status Bar
     private void setFullscreen() {
         View decorView = getWindow().getDecorView();
         decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
