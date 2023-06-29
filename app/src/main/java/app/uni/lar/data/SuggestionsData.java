@@ -4,9 +4,12 @@ import app.uni.lar.R;
 import app.uni.lar.models.Suggestion;
 
 public class SuggestionsData {
-    private final Suggestion[] suggestionsData = new Suggestion[] {
+    private final Suggestion[] suggestionsData = new Suggestion[]{
+            //TODO("hey Ali this data is for main activity suggestions list ")
+            // For make a new suggestion, write """"""""new Suggestion("CHaloos baghali", R.drawable.aks chaloos baghali),""""""" on bottom of this comment.
             new Suggestion("Email", R.drawable.image_lorem),
     };
+
     public Suggestion[] getSuggestionsData() {
         return this.suggestionsData;
     }
