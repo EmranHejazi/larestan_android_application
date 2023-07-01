@@ -102,6 +102,7 @@
 
             </com.google.android.material.card.MaterialCardView>
             <TextView
+                android:id="@+id/text_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/lorem_description"

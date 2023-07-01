@@ -15,6 +15,7 @@ public class ItemActivity extends AppCompatActivity {
     TextView textTitle;
     ImageView imageItem;
     TextView titleItem;
+    TextView textContent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +37,12 @@ public class ItemActivity extends AppCompatActivity {
         String itemImageID = getIntent().getStringExtra("item_imageID");
         String itemContent = getIntent().getStringExtra("item_content");
         String categoryTitle = getIntent().getStringExtra("category_title");
-        // set title
+        // set titles
         textTitle.setText(categoryTitle);
         titleItem.setText(itemName);
+        // set content
+        textContent.setText(itemContent);
+
     }
 
     private void findViews() {
@@ -46,5 +50,6 @@ public class ItemActivity extends AppCompatActivity {
         buttonBack = findViewById(R.id.button_back);
         titleItem = findViewById(R.id.title_item);
         imageItem = findViewById(R.id.image_item);
+        textContent = findViewById(R.id.text_content);
     }
 }

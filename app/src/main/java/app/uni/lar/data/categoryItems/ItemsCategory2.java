@@ -8,9 +8,8 @@ import app.uni.lar.models.Item;
 public class ItemsCategory2 {
     public ItemsCategory2(Context context) {
         ItemsCategory2 = new Item[]{
-                //TODO("Edit this data!!")
-                new Item(context.getResources().getString(R.string.category_1_natural_geography), R.drawable.ic_earth, ""),
-                new Item(context.getResources().getString(R.string.category_2_local_games), R.drawable.ic_ball, ""),
+                //TODO("this data is for Bazi haye mahali's items")
+                new Item(context.getResources().getString(R.string.category_1_natural_geography), R.drawable.image_lorem, ""),
         };
     }
 
