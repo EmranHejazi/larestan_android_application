@@ -9,7 +9,7 @@ public class ExitDialog {
     public static void show(Context context) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("خروج از برنامه");
-        builder.setMessage("برای خروج روی خروج کلیک کنید!");
+        builder.setMessage("آیا می خواهید از برنامه خارج شوید؟");
         builder.setCancelable(false);
         builder.setPositiveButton("خروج", new DialogInterface.OnClickListener() {
             @Override
@@ -18,7 +18,7 @@ public class ExitDialog {
                 System.exit(0);
             }
         });
-        builder.setNegativeButton("کنسل", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("لغو", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int id) {
                 // Do nothing

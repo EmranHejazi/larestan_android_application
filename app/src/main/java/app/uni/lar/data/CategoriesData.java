@@ -9,7 +9,7 @@ public class CategoriesData {
 
     public CategoriesData(Context context) {
         categoriesData = new Category[]{
-                //TODO("Hey Ali this data for categories. it's showing on the Main Activity")
+                //TODO("this data for categories. it's showing on the Main Activity")
                 new Category(context.getResources().getString(R.string.category_1_natural_geography), R.drawable.category_ic_earth),
                 new Category(context.getResources().getString(R.string.category_2_local_games), R.drawable.category_ic_ball),
                 new Category(context.getResources().getString(R.string.category_3_ancient_places), R.drawable.category_ic_ancient),
