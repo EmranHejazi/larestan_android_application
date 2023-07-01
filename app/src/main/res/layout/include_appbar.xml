@@ -49,7 +49,7 @@
                     android:layout_marginEnd="5dp"
                     android:contentDescription="@string/content_description_lar"
                     android:padding="3dp"
-                    android:src="@drawable/ic_lar_on_content" />
+                    android:src="@drawable/logo_gray" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -57,7 +57,7 @@
                     android:layout_gravity="center"
                     android:layout_marginBottom="2dp"
                     android:fontFamily="@font/iranyekan"
-                    android:text="@string/search"
+                    android:text="@string/title_search"
                     android:textColor="@color/on_content"
                     android:textSize="20sp"
                     android:textStyle="bold"

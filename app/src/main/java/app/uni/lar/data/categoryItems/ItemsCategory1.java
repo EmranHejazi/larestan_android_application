@@ -8,8 +8,11 @@ import app.uni.lar.models.Item;
 public class ItemsCategory1 {
     public ItemsCategory1(Context context) {
         ItemsCategory1 = new Item[]{
-                //TODO("this data is for Jorrafia tabiei's items")
-                new Item(context.getResources().getString(R.string.category_1_natural_geography), R.drawable.image_lorem, "ITEM1"),
+                // this data is for Jorrafia tabiei's items
+                new Item(context.getResources().getString(R.string.category_1_title_abohava), R.drawable.category_1_image_abohava, context.getResources().getString(R.string.category_1_content_abohava)),
+                new Item(context.getResources().getString(R.string.category_1_title_rodha), R.drawable.category_1_image_rodha, context.getResources().getString(R.string.category_1_content_rodha)),
+                new Item(context.getResources().getString(R.string.category_1_title_maeaden), R.drawable.category_1_image_maeaden, context.getResources().getString(R.string.category_1_content_maeaden)),
+                new Item(context.getResources().getString(R.string.category_1_title_zendegijanevari), R.drawable.category_1_image_zendegijanevari, context.getResources().getString(R.string.category_1_content_zendegijanevari)),
         };
     }
 

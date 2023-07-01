@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -37,8 +36,8 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Vi
         holder.textView.setText(categories[position].getTitle());
         holder.imageView.setImageResource(categories[position].getImageID());
         holder.relativeLayout.setOnClickListener(view -> {
-            Intent intent= new Intent(view.getContext(), CategoryItemsActivity.class);
-            intent.putExtra("category_name",categories[position].getTitle());
+            Intent intent = new Intent(view.getContext(), CategoryItemsActivity.class);
+            intent.putExtra("category_name", categories[position].getTitle());
             view.getContext().startActivity(intent);
         });
     }

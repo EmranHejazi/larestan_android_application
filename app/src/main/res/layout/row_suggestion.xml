@@ -4,11 +4,14 @@
     android:id="@+id/relative_layout_suggestions"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="20dp">
+    android:padding="5dp"
+    android:layout_margin="10dp">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="280dp"
         android:layout_height="446dp"
+        app:cardElevation="5dp"
+        android:layout_margin="10dp"
         app:cardBackgroundColor="@color/primary"
         app:cardCornerRadius="30dp">
 

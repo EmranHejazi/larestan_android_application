@@ -1,18 +1,21 @@
 package app.uni.lar.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import app.uni.lar.R;
 import app.uni.lar.adapters.CategoriesAdapter;
@@ -40,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
         findViews();
         buttonMenu.setOnClickListener(v -> eventMenuClick()); // popup the menu
         searchContainer.setOnClickListener(v -> eventSearchClick());
+        // set icons color of Status Bar
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+
     }
 
     private void findViews() {
@@ -73,6 +79,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(MainActivity.this, SearchActivity.class));
     }
 
+    private void setFullscreen() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            Window w = getWindow(); // in Activity's onCreate() for instance
+            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        }
+    }
+
     private void eventMenuClick() {
         PopupMenu popupMenu = new PopupMenu(this, buttonMenu);
         MenuInflater inflater = popupMenu.getMenuInflater();
@@ -84,13 +97,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         ExitDialog.show(MainActivity.this);
-    }
-
-    // hide the Status Bar
-    private void setFullscreen() {
-        View decorView = getWindow().getDecorView();
-        decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
-                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
     }
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
 

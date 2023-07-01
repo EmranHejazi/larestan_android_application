@@ -1,9 +1,9 @@
 package app.uni.lar.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import app.uni.lar.R;
 
