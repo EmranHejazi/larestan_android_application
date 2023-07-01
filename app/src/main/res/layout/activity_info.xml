@@ -62,45 +62,12 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:orientation="vertical">
+<!--            <VideoView-->
+<!--                android:id="@+id/videoView"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent" />-->
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_marginTop="20dp"
-                android:layout_width="200dp"
-                android:layout_height="250dp"
-                app:cardBackgroundColor="@color/primary"
-                app:cardCornerRadius="30dp"
-                app:cardElevation="5dp"
-                android:layout_gravity="center">
 
-                <ImageView
-                    android:id="@+id/image_item"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/image_lorem" />
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_gravity="bottom"
-                    android:background="@drawable/shape_suggestions_description">
-
-                    <TextView
-                        android:id="@+id/title_item"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/iranyekan"
-                        android:text="@string/lorem_title"
-                        android:textColor="@color/white"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </com.google.android.material.card.MaterialCardView>
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
