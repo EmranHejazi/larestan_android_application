@@ -79,6 +79,7 @@ public class SearchActivity extends AppCompatActivity {
         itemsList.addAll(Arrays.asList(category4.getItemsCategory4()));
         itemsList.addAll(Arrays.asList(category5.getItemsCategory5()));
         itemsList.addAll(Arrays.asList(category6.getItemsCategory6()));
+
         // set list adapter
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.list_search);
         SearchAdapter adapter = new SearchAdapter(itemsList);
