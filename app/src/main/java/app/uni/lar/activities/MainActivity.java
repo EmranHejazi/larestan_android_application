@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     // define global variables for views
     private ImageView buttonMenu;
     private LinearLayout searchContainer;
+    private View menuContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
     private void findViews() {
         buttonMenu = findViewById(R.id.button_menu);
         searchContainer = findViewById(R.id.search_container);
+        menuContainer = findViewById(R.id.menu_container);
     }
 
     // set lists adapter
@@ -89,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void eventMenuClick() {
-        PopupMenu popupMenu = new PopupMenu(this, buttonMenu);
+        PopupMenu popupMenu = new PopupMenu(this, menuContainer);
         MenuInflater inflater = popupMenu.getMenuInflater();
         inflater.inflate(R.menu.menu_main, popupMenu.getMenu());
         popupMenu.show();
