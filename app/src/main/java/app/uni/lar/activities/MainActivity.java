@@ -1,6 +1,7 @@
 package app.uni.lar.activities;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuInflater;
@@ -16,6 +17,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.io.File;
 
 import app.uni.lar.R;
 import app.uni.lar.adapters.CategoriesAdapter;
@@ -37,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initialize();
     }
+
 
     private void initialize() {
         setFullscreen();
@@ -118,14 +122,35 @@ public class MainActivity extends AppCompatActivity {
         ExitDialog.show(MainActivity.this);
     }
 
-    public void eventMenuItemClickShare(MenuItem item) {
-        // open android share intent
-        String link = "http://dushusir.com/fake/win10ue/win10ue.html";
-        Intent shareIntent = new Intent(Intent.ACTION_SEND);
-        shareIntent.setType("text/plain");
-        shareIntent.putExtra(Intent.EXTRA_TEXT, link);
-        startActivity(Intent.createChooser(shareIntent, "Share link"));
-    }
+//    public void eventMenuItemClickShare(MenuItem item) {
+//        // open android share intent
+//        String link = "http://dushusir.com/fake/win10ue/win10ue.html";
+//        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+//        shareIntent.setType("text/plain");
+//        shareIntent.putExtra(Intent.EXTRA_TEXT, link);
+//        startActivity(Intent.createChooser(shareIntent, "Share link"));
+//    }
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+    public void eventMenuItemClickShare(MenuItem item) {
+        // Get the file path of the app file.
+        String filePath = "Lar.app.main.apk";
+
+        // Create an Intent with the ACTION_SEND action.
+        Intent share = new Intent(Intent.ACTION_SEND);
+        share.setAction(Intent.ACTION_SEND);
+
+        // Set the type of the file to be shared.
+        share.setType("application/vnd.android.package-archive");
+
+        // Create a content URI for the file.
+        Uri contentUri = Uri.fromFile(new File(filePath));
+
+        // Put the content URI in the Intent.
+        share.putExtra(Intent.EXTRA_STREAM, contentUri);
+
+        // Start the Intent.
+        startActivity(Intent.createChooser(share, "به اشتراک گذاری اپلیکیشن"));
+    }
 }
