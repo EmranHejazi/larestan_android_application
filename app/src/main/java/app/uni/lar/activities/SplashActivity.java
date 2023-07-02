@@ -10,6 +10,7 @@ import android.view.WindowManager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import app.uni.lar.R;
+import app.uni.lar.utils.DarkModeChecker;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -49,8 +50,9 @@ public class SplashActivity extends AppCompatActivity {
 
     private void setStatusBarIcons() {
         // set icons color of Status Bar
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-    }
+        if (DarkModeChecker.isDarkModeOff(this)) {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        }    }
 
     private void setFullscreen() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {

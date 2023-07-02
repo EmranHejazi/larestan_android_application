@@ -1,5 +1,7 @@
 package app.uni.lar.activities;
 
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.SeekBar;
@@ -37,8 +39,8 @@ public class ItemActivity extends AppCompatActivity {
         });
         // set the Status bar color
         getWindow().setStatusBarColor(getColor(R.color.primary));
-
-
+        seekBarZoom.getThumb().setColorFilter(getColor(R.color.primary), PorterDuff.Mode.SRC_IN);
+        seekBarZoom.getProgressDrawable().setColorFilter(getColor(R.color.primary), PorterDuff.Mode.SRC_IN);
     }
 
     private void findViews() {
@@ -48,8 +50,6 @@ public class ItemActivity extends AppCompatActivity {
         imageItem = findViewById(R.id.image_item);
         textContent = findViewById(R.id.text_content);
         seekBarZoom = findViewById(R.id.seekBarZoom);
-
-
     }
 
     private void loadData() {

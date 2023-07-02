@@ -9,9 +9,10 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="primary">#c8b27d</color>
-    <color name="primary_transparent">#BCC8B27D</color>
+    <color name="primary_transparent">#80645736</color>
     <color name="background">#000000</color>
     <color name="content">#353535</color>
     <color name="on_content">#AEADAD</color>
-    <color name="text">#444444</color>
+    <color name="text">#FFFFFF</color>
+    <color name="card_color">#444444</color>
 </resources>

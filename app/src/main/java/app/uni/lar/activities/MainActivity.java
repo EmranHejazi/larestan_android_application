@@ -22,6 +22,7 @@ import app.uni.lar.adapters.CategoriesAdapter;
 import app.uni.lar.adapters.SuggestionsAdapter;
 import app.uni.lar.data.CategoriesData;
 import app.uni.lar.data.SuggestionsData;
+import app.uni.lar.utils.DarkModeChecker;
 import app.uni.lar.utils.ExitDialog;
 
 public class MainActivity extends AppCompatActivity {
@@ -44,8 +45,9 @@ public class MainActivity extends AppCompatActivity {
         buttonMenu.setOnClickListener(v -> eventMenuClick()); // popup the menu
         searchContainer.setOnClickListener(v -> eventSearchClick());
         // set icons color of Status Bar
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-
+        if (DarkModeChecker.isDarkModeOff(this)) {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        }
     }
 
     private void findViews() {
@@ -67,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.list_categories);
         CategoriesAdapter adapter = new CategoriesAdapter(new CategoriesData(MainActivity.this).getCategoriesData());
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 3, GridLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(adapter);
     }
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
