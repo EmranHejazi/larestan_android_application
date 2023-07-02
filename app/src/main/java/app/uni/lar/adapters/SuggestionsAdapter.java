@@ -34,7 +34,9 @@ public class SuggestionsAdapter extends RecyclerView.Adapter<SuggestionsAdapter.
         final Suggestion suggestion = suggestions[position];
         holder.textView.setText(suggestions[position].getTitle());
         holder.imageView.setImageResource(suggestions[position].getImageID());
-        holder.relativeLayout.setOnClickListener(view -> Toast.makeText(view.getContext(), "click on item: " + suggestion.getTitle(), Toast.LENGTH_LONG).show());
+        holder.relativeLayout.setOnClickListener(view -> {
+
+        });
     }
 
 
