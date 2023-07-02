@@ -42,7 +42,7 @@
             android:text="@string/category_1_natural_geography"
             android:textColor="@color/primary"
             android:textAlignment="center"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
     </LinearLayout>
