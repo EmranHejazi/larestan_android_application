@@ -1,6 +1,8 @@
 package app.uni.lar.adapters;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,6 +45,8 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
         Item item = itemList.get(position);
         holder.imageView.setImageResource(item.getImageID());
         holder.textView.setText(item.getTitle());
+        int color = Color.parseColor("#FFD570");
+        holder.imageView.setColorFilter(color, PorterDuff.Mode.MULTIPLY);
         holder.relativeLayout.setOnClickListener(view -> {
             // get all data
             itemsList = new ArrayList<>();

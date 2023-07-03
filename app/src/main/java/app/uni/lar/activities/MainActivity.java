@@ -1,8 +1,6 @@
 package app.uni.lar.activities;
 
 import android.content.Intent;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -17,8 +15,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import java.io.File;
 
 import app.uni.lar.R;
 import app.uni.lar.adapters.CategoriesAdapter;
@@ -64,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     // set lists adapter
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
     private void setSuggestionsAdapter() {
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.list_suggestions);
+        RecyclerView recyclerView = findViewById(R.id.list_suggestions);
         SuggestionsAdapter adapter = new SuggestionsAdapter(new SuggestionsData().getSuggestionsData());
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false));
@@ -72,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setCategoriesAdapter() {
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.list_categories);
+        RecyclerView recyclerView = findViewById(R.id.list_categories);
         CategoriesAdapter adapter = new CategoriesAdapter(new CategoriesData(MainActivity.this).getCategoriesData());
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3, GridLayoutManager.VERTICAL, false));
@@ -88,10 +84,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setFullscreen() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Window w = getWindow(); // in Activity's onCreate() for instance
-            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        }
+        Window w = getWindow(); // in Activity's onCreate() for instance
+        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
     }
 
     private void eventMenuClick() {
@@ -122,18 +116,17 @@ public class MainActivity extends AppCompatActivity {
         ExitDialog.show(MainActivity.this);
     }
 
-//    public void eventMenuItemClickShare(MenuItem item) {
-//        // open android share intent
-//        String link = "http://dushusir.com/fake/win10ue/win10ue.html";
-//        Intent shareIntent = new Intent(Intent.ACTION_SEND);
-//        shareIntent.setType("text/plain");
-//        shareIntent.putExtra(Intent.EXTRA_TEXT, link);
-//        startActivity(Intent.createChooser(shareIntent, "Share link"));
-//    }
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
     public void eventMenuItemClickShare(MenuItem item) {
+        Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
+        shareIntent.setType("text/plain");
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Insert Subject here");
+        String app_url = "https://fakeupdate.net/win10ue/";
+        shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, app_url);
+        startActivity(Intent.createChooser(shareIntent, "Share via"));
+    }
+
+    /* public void eventMenuItemClickShare(MenuItem item) {
         // Get the file path of the app file.
         String filePath = "Lar.app.main.apk";
 
@@ -152,5 +145,9 @@ public class MainActivity extends AppCompatActivity {
 
         // Start the Intent.
         startActivity(Intent.createChooser(share, "به اشتراک گذاری اپلیکیشن"));
-    }
+    } */
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 }

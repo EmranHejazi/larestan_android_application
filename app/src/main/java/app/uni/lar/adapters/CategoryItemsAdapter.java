@@ -1,6 +1,8 @@
 package app.uni.lar.adapters;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,6 +39,8 @@ public class CategoryItemsAdapter extends RecyclerView.Adapter<CategoryItemsAdap
         final Item item = items[position];
         holder.textView.setText(items[position].getTitle());
         holder.imageView.setImageResource(items[position].getImageID());
+        int color = Color.parseColor("#FFD570");
+        holder.imageView.setColorFilter(color, PorterDuff.Mode.MULTIPLY);
         holder.relativeLayout.setOnClickListener(view -> {
             Intent intent = new Intent(view.getContext(), ItemActivity.class);
             intent.putExtra("item_name", items[position].getTitle());

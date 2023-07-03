@@ -90,7 +90,6 @@
         android:layout_height="50dp"
         android:background="@android:color/transparent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginRight="100dp"
-        />
+        android:layout_marginRight="100dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

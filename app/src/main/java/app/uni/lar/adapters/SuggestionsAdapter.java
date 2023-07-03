@@ -1,6 +1,9 @@
 package app.uni.lar.adapters;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -48,6 +52,10 @@ public class SuggestionsAdapter extends RecyclerView.Adapter<SuggestionsAdapter.
         final Suggestion suggestion = suggestions[position];
         holder.textView.setText(suggestions[position].getTitle());
         holder.imageView.setImageResource(suggestions[position].getImageID());
+        int color = Color.parseColor("#FFD570");
+        holder.imageView.setColorFilter(color, PorterDuff.Mode.MULTIPLY);
+
+
         holder.relativeLayout.setOnClickListener(view -> {
             // get all data
             itemsList = new ArrayList<>();

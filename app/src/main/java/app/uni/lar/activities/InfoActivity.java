@@ -7,8 +7,10 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.MediaController;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,6 +26,7 @@ public class InfoActivity extends AppCompatActivity {
     private ImageView buttonPlay;
     private ImageView buttonPause;
     private MediaPlayer mMediaPlayer;
+    private VideoView videoView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +51,7 @@ public class InfoActivity extends AppCompatActivity {
             finish();
         });
         loadSound();
+        loadVideo();
     }
 
     private void findViews() {
@@ -56,6 +60,7 @@ public class InfoActivity extends AppCompatActivity {
         seekBarZoom = findViewById(R.id.seekBarZoom);
         buttonPlay = findViewById(R.id.button_play);
         buttonPause = findViewById(R.id.button_pause);
+        videoView = findViewById(R.id.video_view);
     }
 
 
@@ -101,6 +106,17 @@ public class InfoActivity extends AppCompatActivity {
         buttonPause.setOnClickListener(v -> {
             mMediaPlayer.stop();
         });
+    }
+
+    private void loadVideo() {
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.video_info;
+        Uri videoUri = Uri.parse(videoPath);
+        videoView.setVideoURI(videoUri);
+        MediaController mediaController = new MediaController(this);
+        mediaController.setAnchorView(videoView);
+        videoView.setMediaController(mediaController);
+        videoView.start();
+
     }
 
 }
