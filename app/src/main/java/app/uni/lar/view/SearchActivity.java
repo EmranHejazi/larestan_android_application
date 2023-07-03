@@ -1,4 +1,4 @@
-package app.uni.lar.activities;
+package app.uni.lar.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,11 +30,7 @@ import app.uni.lar.models.Item;
 public class SearchActivity extends AppCompatActivity {
 
     private ImageView buttonBack;
-    private List<String> originalList;
-    private List<String> filteredList;
-    private RecyclerView recyclerView;
     private MaterialAutoCompleteTextView searchEditText;
-    private SearchAdapter adapter;
     private ArrayList<Item> itemsList;
 
 
@@ -81,7 +77,7 @@ public class SearchActivity extends AppCompatActivity {
         itemsList.addAll(Arrays.asList(category6.getItemsCategory6()));
 
         // set list adapter
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.list_search);
+        RecyclerView recyclerView = findViewById(R.id.list_search);
         SearchAdapter adapter = new SearchAdapter(itemsList);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));

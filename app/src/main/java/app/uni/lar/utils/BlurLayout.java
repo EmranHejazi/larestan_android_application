@@ -71,20 +71,16 @@ public class BlurLayout extends FrameLayout {
         }
 
         if (mFPS > 0) {
+            Choreographer.FrameCallback invalidationLoop = new Choreographer.FrameCallback() {
+                @Override
+                public void doFrame(long frameTimeNanos) {
+                    invalidate();
+                    Choreographer.getInstance().postFrameCallbackDelayed(this, 1000 / mFPS);
+                }
+            };
             Choreographer.getInstance().postFrameCallback(invalidationLoop);
         }
     }
-
-    /**
-     * Choreographer callback that re-draws the blur and schedules another callback.
-     */
-    private Choreographer.FrameCallback invalidationLoop = new Choreographer.FrameCallback() {
-        @Override
-        public void doFrame(long frameTimeNanos) {
-            invalidate();
-            Choreographer.getInstance().postFrameCallbackDelayed(this, 1000 / mFPS);
-        }
-    };
 
     /**
      * {@inheritDoc}
@@ -244,7 +240,6 @@ public class BlurLayout extends FrameLayout {
      * Uses a Rect to crop the view into the bitmap.
      *
      * @return Bitmap made from view, downscaled by downscaleFactor.
-     * @throws NullPointerException
      */
     private Bitmap getDownscaledBitmapForView(View view, Rect crop, float downscaleFactor) throws NullPointerException {
         View screenView = view.getRootView();
@@ -268,32 +263,6 @@ public class BlurLayout extends FrameLayout {
         screenView.draw(canvas);
 
         return bitmap;
-    }
-
-    /**
-     * Sets downscale factor to use pre-blur.
-     * See {@link #mDownscaleFactor}.
-     */
-    public void setDownscaleFactor(float downscaleFactor) {
-        this.mDownscaleFactor = downscaleFactor;
-        invalidate();
-    }
-
-    /**
-     * Sets blur radius to use on downscaled bitmap.
-     * See {@link #mBlurRadius}.
-     */
-    public void setBlurRadius(int blurRadius) {
-        this.mBlurRadius = blurRadius;
-        invalidate();
-    }
-
-    /**
-     * Sets FPS to invalidate blur with.
-     * See {@link #mFPS}.
-     */
-    public void setFPS(int fps) {
-        this.mFPS = fps;
     }
 
 }

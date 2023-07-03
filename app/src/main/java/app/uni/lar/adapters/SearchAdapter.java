@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import app.uni.lar.R;
-import app.uni.lar.activities.ItemActivity;
+import app.uni.lar.view.ItemActivity;
 import app.uni.lar.data.categoryItems.ItemsCategory1;
 import app.uni.lar.data.categoryItems.ItemsCategory2;
 import app.uni.lar.data.categoryItems.ItemsCategory3;
@@ -34,6 +35,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
         this.itemList = itemList;
     }
 
+    @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_search, parent, false);
@@ -90,7 +92,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
         notifyDataSetChanged();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         TextView textView;
         RelativeLayout relativeLayout;

@@ -14,7 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import app.uni.lar.R;
-import app.uni.lar.activities.ItemActivity;
+import app.uni.lar.view.ItemActivity;
 import app.uni.lar.models.Item;
 
 public class CategoryItemsAdapter extends RecyclerView.Adapter<CategoryItemsAdapter.ViewHolder> {
@@ -36,7 +36,6 @@ public class CategoryItemsAdapter extends RecyclerView.Adapter<CategoryItemsAdap
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        final Item item = items[position];
         holder.textView.setText(items[position].getTitle());
         holder.imageView.setImageResource(items[position].getImageID());
         int color = Color.parseColor("#FFD570");

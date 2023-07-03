@@ -1,8 +1,8 @@
 package app.uni.lar.models;
 
 public class Category {
-    private String title;
-    private int imageID;
+    private final String title;
+    private final int imageID;
 
     public Category(String title, int imageID) {
         this.title = title;
@@ -13,15 +13,8 @@ public class Category {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public int getImageID() {
         return imageID;
     }
 
-    public void setImageID(int imageID) {
-        this.imageID = imageID;
-    }
 }

@@ -1,4 +1,4 @@
-package app.uni.lar.activities;
+package app.uni.lar.view;
 
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -35,9 +35,7 @@ public class CategoryItemsActivity extends AppCompatActivity {
         // change the color of status bar
         getWindow().setStatusBarColor(getColor(R.color.primary));
         // event for back button
-        buttonBack.setOnClickListener(view -> {
-            finish();
-        });
+        buttonBack.setOnClickListener(view -> finish());
         String category = getIntent().getStringExtra("category_name");
         // set title
         textTitle.setText(category);
@@ -64,17 +62,13 @@ public class CategoryItemsActivity extends AppCompatActivity {
             setCategoryItemsAdapter(new ItemsCategory6(CategoryItemsActivity.this).getItemsCategory6(), category6);
     }
 
-    private String getCategory(String title) {
-        return title;
-    }
-
     private void findViews() {
         textTitle = findViewById(R.id.text_title);
         buttonBack = findViewById(R.id.button_back);
     }
 
     private void setCategoryItemsAdapter(Item[] data, String categoryTitle) {
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.list_category_items);
+        RecyclerView recyclerView = findViewById(R.id.list_category_items);
         CategoryItemsAdapter adapter = new CategoryItemsAdapter(data, categoryTitle);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));

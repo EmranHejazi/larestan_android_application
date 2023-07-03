@@ -1,4 +1,4 @@
-package app.uni.lar.activities;
+package app.uni.lar.view;
 
 import android.content.Intent;
 import android.os.Bundle;

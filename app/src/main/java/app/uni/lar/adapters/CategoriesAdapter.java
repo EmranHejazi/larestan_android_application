@@ -12,8 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import app.uni.lar.R;
-import app.uni.lar.activities.CategoryItemsActivity;
 import app.uni.lar.models.Category;
+import app.uni.lar.view.CategoryItemsActivity;
 
 public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.ViewHolder> {
     private final Category[] categories;
@@ -32,7 +32,6 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Vi
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        final Category category = categories[position];
         holder.textView.setText(categories[position].getTitle());
         holder.imageView.setImageResource(categories[position].getImageID());
         holder.relativeLayout.setOnClickListener(view -> {

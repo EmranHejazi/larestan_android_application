@@ -1,6 +1,5 @@
-package app.uni.lar.activities;
+package app.uni.lar.view;
 
-import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -18,9 +17,10 @@ public class ItemActivity extends AppCompatActivity {
     private TextView titleItem;
     private TextView textContent;
     private ImageView imageItem;
-    private ImageView buttonZoomIn;
-    private ImageView buttonZoomOut;
     private SeekBar seekBarZoom;
+
+    public ItemActivity() {
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +34,7 @@ public class ItemActivity extends AppCompatActivity {
         eventZoomAction();
         loadData();
         // event for back button
-        buttonBack.setOnClickListener(v -> {
-            finish();
-        });
+        buttonBack.setOnClickListener(v -> finish());
         // set the Status bar color
         getWindow().setStatusBarColor(getColor(R.color.primary));
         seekBarZoom.getThumb().setColorFilter(getColor(R.color.primary), PorterDuff.Mode.SRC_IN);
@@ -72,8 +70,7 @@ public class ItemActivity extends AppCompatActivity {
         seekBarZoom.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                int fontSize = progress;
-                textContent.setTextSize(fontSize);
+                textContent.setTextSize(progress);
             }
 
             @Override

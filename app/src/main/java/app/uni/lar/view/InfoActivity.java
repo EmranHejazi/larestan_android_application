@@ -1,4 +1,4 @@
-package app.uni.lar.activities;
+package app.uni.lar.view;
 
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -99,13 +99,9 @@ public class InfoActivity extends AppCompatActivity {
 
         // Prepare the MediaPlayer
         mMediaPlayer.prepare();
-        buttonPlay.setOnClickListener(v -> {
-            mMediaPlayer.start();
-        });
+        buttonPlay.setOnClickListener(v -> mMediaPlayer.start());
 
-        buttonPause.setOnClickListener(v -> {
-            mMediaPlayer.stop();
-        });
+        buttonPause.setOnClickListener(v -> mMediaPlayer.stop());
     }
 
     private void loadVideo() {
