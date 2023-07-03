@@ -1,5 +1,6 @@
 package app.uni.lar.view;
 
+import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -64,6 +65,8 @@ public class ItemActivity extends AppCompatActivity {
         textContent.setTextSize(seekBarZoom.getProgress());
         // set images
         imageItem.setImageResource(itemImageID);
+        int color = Color.parseColor("#FFD570");
+        imageItem.setColorFilter(color, PorterDuff.Mode.MULTIPLY);
     }
 
     private void eventZoomAction() {
