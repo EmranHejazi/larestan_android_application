@@ -1,7 +1,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/EmranHejazi/lar_android_application">
-    <img src="app/src/main/res/drawable/ic_logo_app.jpg" alt="Logo" width="120" height="120">
+    <img src="app/src/main/res/drawable/ic_logo_app_rounded.png" alt="Logo" width="120" height="120">
   </a>
 
   <h3 align="center">LAR APPLICATION</h3>
